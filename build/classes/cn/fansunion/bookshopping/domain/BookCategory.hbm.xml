@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.fansunion.bookshopping.domain">
+	<class name="BookCategory" table="book_category">
+		<!-- 映射标识属性 -->
+		<id name="bookCategoryId" column="book_category_id" type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" type="string" />
+		
+		<!-- 映射属性 -->
+		<set name="books">
+			<key column="book_id"></key>
+			<one-to-many class="Book"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

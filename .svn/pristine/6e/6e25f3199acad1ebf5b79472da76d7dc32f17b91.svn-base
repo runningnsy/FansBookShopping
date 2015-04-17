@@ -1,0 +1,43 @@
+#articles{
+width:680px;
+}
+
+
+.cat{
+width:auto;
+float:right;
+clear:left;
+ height:20px;
+ margin-left:10px;
+}
+
+.title{
+float:left;
+clear:right;
+width:auto;
+ height:20px;
+  margin-left:10px;
+}
+
+.date{
+float:left;
+clear:right;
+width:auto;
+height:20px;
+ margin-left:15px;
+}
+
+.left1{
+width:680px;
+margin-top:10px;
+}
+
+
+#down {
+	width: 700px;
+}
+
+.link{
+width:960px;
+text-align:center;
+}

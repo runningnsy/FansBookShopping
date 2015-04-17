@@ -1,0 +1,177 @@
+/*基本信息*/ 
+body{
+	font-family:Arial,Tahoma,Helvetica;
+	font-size:14px;
+	margin:0px;
+	text-align:center;
+	word-spacing: normal;
+   	line-height:15px;
+	} 
+
+
+#left{
+width:100px;
+float:left;
+}
+
+#left a{
+	border-color:#CCCCCC;
+	border-width:0px;
+	}
+	#left a img{
+	border-width:0px;
+	}
+             
+       	
+#middle{
+width:500px;
+color:#FFFFFF;
+font-size:18px;
+float:left;
+height:50px;
+}
+
+#right{
+width:200px;
+}
+
+/*页面层容器*/
+#container{
+width:960px;
+margin:0 auto;
+} 
+
+#header{
+margin:auto 0;
+}
+
+/*  顶部帮助 */
+#up{
+width:100%;
+background-image:url(/images/up.gif);
+height:20px;
+vertical-align:middle;
+text-align:right;
+
+}
+
+/*页面横幅*/ 
+#banner{
+	border:1px;
+	BACKGROUND: #3f6580;
+	 HEIGHT: 90px; 
+	 COLOR: #ffffff; 
+	 FONT-SIZE: 0.8em; 
+	  FONT-WEIGHT: bold;
+	  
+}
+
+/*  导航菜单 */
+#menu {
+ MARGIN: 0;
+ PADDING: 4px 0px 0px 0px; 
+BACKGROUND: #3f6580;
+
+   HEIGHT:35px; 
+   width:960px;
+   vertical-align:middle;
+   }
+
+ #menu ul { 
+ CLEAR: left; 
+ MARGIN: 0px; 
+ PADDING:0px; 
+ BORDER: 0px; 
+  TEXT-ALIGN:left; 
+  DISPLAY:inline;
+  HEIGHT:35px; 
+  
+  } 
+  
+#menu li {
+ FLOAT: left; 
+ DISPLAY: block;
+ 
+  PADDING-top: 3px; 
+  PADDING-bottom: 3px; 
+  TEXT-ALIGN: center;
+  width:auto;
+  vertical-align:middle;
+  }
+
+ #menu li a {
+  DISPLAY: inline;
+   PADDING:2px 3px 2px 3px;
+	FONT-WEIGHT: bold; 
+	WIDTH: 100%; 
+   COLOR:  #FFFFFF;
+	TEXT-DECORATION: none; 
+	vertical-align:middle;
+	font-size:14px;
+	}
+
+ #menu li a:hover { 
+ BACKGROUND: #C61C18 no-repeat 2px 8px;
+  COLOR: #fff; }
+
+#menu ul li a { WIDTH: 100px;}
+
+#menu ul li#blog a { WIDTH: 60px} 
+
+ #menu ul li#myself a { WIDTH: 60px}
+ #menu ul li#home a { WIDTH: 60px;margin-left:100px;}
+ 
+ #menu ul li#music a { WIDTH: 80px} 
+#menu ul li#photo a { WIDTH: 80px} 
+
+#menu ul li#mood a { WIDTH: 90px} 
+#menu ul li#book a { WIDTH: 80px}
+#menu ul li#friend a { WIDTH: 80px}
+#menu ul li#hometown a { WIDTH: 80px}
+
+#menu ul li#message a { WIDTH: 60px} 
+#menu ul li#navigator a { WIDTH: 60px}
+#menu ul li#contactus a { WIDTH: 60px}
+#menu ul li#aboutus a { WIDTH: 60px}
+#menu ul li#paper a { WIDTH: 60px}
+
+ /*页面主体*/
+#pagebody{
+	font-family:Arial,Tahoma,Helvetica;
+	width:960px;
+	margin:0 auto;
+	height:auto;
+	margin-left:0px;
+}
+
+/*页面底部*/
+#footer{
+	width:960px;
+	height:40px;
+	margin-top: 15px;
+	clear:both;
+
+}
+
+a{
+  color:#00007F;
+   text-decoration:none;
+ }
+ 
+a:hover{
+   color:#bd0a01;
+  text-decoration:underline;
+  }
+
+
+input.buttonblue{
+	background-color: #3f6580;
+	HEIGHT:26px;
+	width:48px;
+	color: #ffffff; 
+	text-align:center;
+	border:solid 1px #3f6580;
+	padding:0px;
+}
+
+

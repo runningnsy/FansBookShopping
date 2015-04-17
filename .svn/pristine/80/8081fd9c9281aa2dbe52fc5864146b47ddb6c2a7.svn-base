@@ -1,0 +1,86 @@
+
+#mybody{
+	width:960px;
+	margin-eft:0px;
+}
+	
+	
+#tip{
+width:960px;
+height:auto;
+font:13px "Arial" ;
+border:solid 1px #77CC00;
+background:#FFFAB3;
+height:40px;
+margin-left:0px;
+text-align:left;
+color:#808080;
+}
+
+#fans{
+width:960px;
+text-align:left;
+border:solid 1px #77CC00;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+#jiyu{
+	font:16px bold;
+}
+	
+#content{
+color:#808080;
+margin-left:10px;
+}
+
+#articleComments{
+width:960px;
+ border:solid 1px #77CC00;
+}
+
+.articleComment{
+width:960px;
+text-align:left;
+}
+
+.info{
+width:960px;
+color:#808080;
+font-size:12px;
+}
+
+.content{
+width:960px;
+
+}
+
+.toptool{
+width:960px;
+text-align:left;
+
+}
+
+#writecomment{
+width:960px;
+height:20px;
+
+}
+
+#comment{
+width:960px;
+text-align:left;
+height:auto;
+}
+
+#title{
+width:960px;
+font:20px bold;
+margin-left:50px;
+text-align:left;
+
+}
+
+#title a{
+color:red;
+}

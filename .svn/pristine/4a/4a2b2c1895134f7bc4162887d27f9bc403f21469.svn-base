@@ -1,0 +1,195 @@
+﻿/**
+ * 项目名称: FansBookShopping
+ * 版本号：1.0
+ * 名字：雷文
+ * QQ：240-370-818
+ * 邮箱: LeiWen@FansUnion.cn
+ * 
+ * 小雷网: http://FansUnion.cn
+ * CSDN:http://blog.csdn.net/FansUnion
+ * 版权所有: 2011-2013,leiwen
+ */
+package cn.fansunion.bookshopping.domain;
+
+import java.util.Date;
+
+/**
+ * 书的评论
+ * 
+ * @author 雷文 2011-11-10
+ * @since 1.0
+ */
+public class BookComment {
+	/**
+	 * 评论ID
+	 */
+	private Integer bookCommentId;
+	/**
+	 * 评论人
+	 */
+	private User user;
+	/**
+	 * 被评论的书
+	 */
+	private Book book;
+	/**
+	 * 标题
+	 */
+	private String title;
+	/**
+	 * 内容
+	 */
+	private String content;
+	/**
+	 * 评论时间
+	 */
+	private Date date;
+	/**
+	 * 书的评分
+	 */
+	private Byte grade;
+	/**
+	 * 读书场所
+	 */
+	private String readAddress;
+	/**
+	 * 读书时的心情
+	 */
+	private String mood;
+
+	/**
+	 * @return the bookCommentId
+	 */
+	public Integer getBookCommentId() {
+		return bookCommentId;
+	}
+
+	/**
+	 * @param bookCommentId
+	 *            the bookCommentId to set
+	 */
+	public void setBookCommentId(Integer bookCommentId) {
+		this.bookCommentId = bookCommentId;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user
+	 *            the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	/**
+	 * @return the book
+	 */
+	public Book getBook() {
+		return book;
+	}
+
+	/**
+	 * @param book
+	 *            the book to set
+	 */
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * @param title
+	 *            the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	/**
+	 * @param content
+	 *            the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date
+	 *            the date to set
+	 */
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	/**
+	 * @return the grade
+	 */
+	public Byte getGrade() {
+		return grade;
+	}
+
+	/**
+	 * @param grade
+	 *            the grade to set
+	 */
+	public void setGrade(Byte grade) {
+		this.grade = grade;
+	}
+
+	/**
+	 * @return the readAddress
+	 */
+	public String getReadAddress() {
+		return readAddress;
+	}
+
+	/**
+	 * @param readAddress
+	 *            the readAddress to set
+	 */
+	public void setReadAddress(String readAddress) {
+		this.readAddress = readAddress;
+	}
+
+	/**
+	 * @return the mood
+	 */
+	public String getMood() {
+		return mood;
+	}
+
+	/**
+	 * @param mood
+	 *            the mood to set
+	 */
+	public void setMood(String mood) {
+		this.mood = mood;
+	}
+
+}

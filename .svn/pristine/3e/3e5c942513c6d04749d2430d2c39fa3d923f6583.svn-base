@@ -1,0 +1,128 @@
+#container{
+	width:960px;
+	margin-eft:0px;
+
+}
+
+/* */
+#mybody{
+	width:960px;
+	margin-left:0px;
+		margin-top:5px;
+	border:solid 1px #77CC00;
+}
+	
+/* */	
+#tip{
+	width:940px;
+	font:13px "Arial" ;
+   border:solid 1px #77CC00;
+   background:#FFFAB3;
+   height:40px;
+   margin-left:0px;
+   margin-top:5px;
+   text-align:left;
+   color:#808080;
+}
+/* */
+#fans{
+width:940px;
+text-align:left;
+ border:solid 1px #77CC00;
+ margin-top:5px;
+ margin-bottom:5px;
+}
+/* */
+#jiyu{
+	font:16px bold;
+}
+
+/* */
+#liuYanBan{
+
+	}
+
+/* */	
+#recentMessages{
+	margin-top:15px;
+	height:auto;
+	width:958px;
+	}
+	
+/* */
+#area{
+	width:940px;
+	border:solid 1px  #F5E190;	
+	height:auto;
+	
+	
+}
+#msgAreaDiv{
+	width:940px;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:3px;
+}
+	
+#msg{
+	width:940px;
+	text-align:left;
+	height:auto;
+	
+}
+
+/* 我要留言 */
+.msgTitle{
+	background-color: #B7CBDC;
+	font-weight: bold 16px;
+	text-align:left;
+	height:22px;
+	text-indent:1em;
+	padding-top:5px;
+	width:940px;
+	margin-bottom:0px;
+}
+
+/* 留言区域*/
+	#msgArea{
+	width:916px;
+	height:80px;
+	margin-top:0px;
+	}
+	
+	/* 提交留言按钮 */
+	#submit{
+	margin-left:20px;
+	}
+	
+	/* 一条留言*/
+	.item{
+	width:940px;
+	height:auto;
+	margin-top:20px;
+	border:solid 1px  #65DC89;
+	}
+	
+	/* 留言内容*/
+	.messageContent{
+		width:900px;
+		margin-left:20px;
+		text-align:left;
+		font:14px;
+		margin-bottom:10px;
+		margin-top:10px;
+	}
+	
+	/* 留言时间 */
+	.messageDate{
+		width:900px;
+		margin-left:20px;
+		margin-top:10px;
+		color:#999999;
+		font:12px;
+		text-align:left
+	}
+	/* 上一页、下一页链接 */
+	.link{
+	width:960px;
+	}

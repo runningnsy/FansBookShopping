@@ -1,0 +1,42 @@
+﻿.item{
+	width:700px;
+	height:auto;
+	margin-left:10px;
+	margin-top:10px;
+	}
+	
+	.articleCategoryLink{
+	width:auto;
+	float:left;
+	clear:right;
+	}
+	
+	.articleCategoryLink a{
+		color:green;
+	}
+	
+	.articleTitleLink{
+		width:360px;
+		float:left;
+		clear:right;
+		margin-left:10px;
+	}
+	
+	.articleTitleLink a{
+		color:blue;
+	}
+	
+	
+	.num{
+		float:right;
+		clear:right;
+		margin-right:5px;
+	}
+	
+	.writtenDate{
+		float:left;
+		clear:right;
+		margin-left:5px;
+	}
+	
+	

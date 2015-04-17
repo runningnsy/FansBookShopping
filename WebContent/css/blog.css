@@ -1,0 +1,64 @@
+
+	
+#mainbody{
+width:710px; 
+text-align:left;
+float:left; /*浮动居*/ 
+clear:left; /*不允许侧存在浮动*/ 
+height:auto;
+margin-left:0px;
+}
+
+
+.sidebar2 {
+	width:200px; /*设定宽度*/ 
+	border:solid 1px  #F48301;
+	text-align:center;
+	float:right;
+	clear:right; /*不允许左侧存在浮动*/ 
+	height:auto;
+	margin-left:35px;
+	margin-right:0px;
+	overflow:hidden; /*超出宽度部分隐藏*/
+	}
+    
+#category {
+	background-image: url(/images/up.gif);
+	font-weight: bold;
+	margin-left:0px;
+	text-align:left;
+	border:solid 1px #CCCCCC;
+}
+
+#search{ 
+
+height:auto;
+ width: 198px; /*设定宽度*/ 
+float:right; /*浮动居左*/ 
+clear:right; /*不允许左侧存在浮动*/ 
+} 
+	
+hr {
+	color: #c8d3de;
+	height:1px;	
+}
+
+.link{
+width:700px;
+text-align:center;
+}
+
+#recentArticles{
+	border:solid 1px  #F48301;
+	
+	height:auto;
+	width:720px;
+	float:left;
+	clear:right;
+	
+	}
+	
+	#rizhi{
+
+	}
+	

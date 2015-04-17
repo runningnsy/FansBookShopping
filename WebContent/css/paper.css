@@ -1,0 +1,48 @@
+ /*页面主体*/
+#pagebody{
+	width:958px;
+	margin:0 auto;
+	height:auto;
+	border:solid 1px  #F48301;
+}
+
+#mypaper{
+width:958px;
+text-align:left;
+margin-left:10px;
+}
+
+#content {
+	width: 880px;
+	margin-top: 5px;	
+	hegiht:600px;
+	margin-left:30px;
+}
+
+#title{
+margin-top: 5px;
+}
+
+#lianxi{
+	width: 500px;
+}
+#neirong{
+width: 500px;
+}
+
+
+
+#contact{
+	hegiht:600px;
+	width: 300px;
+	margin-top: 5px;
+	margin-left:30px;
+}
+
+#submit{
+	margin-top: 20px;
+	width: 300px;
+	margin-left:50px;
+}
+
+	  

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.fansunion.bookshopping.domain">
+	<class name="BookComment" table="book_comment">
+		<!-- 映射标识属性 -->
+		<id name="bookCommentId" column="book_comment_id" type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="title" column="title" type="string" />
+		<property name="content" column="content" type="string" />
+		<property name="date" column="date" type="java.util.Date" />
+		<property name="grade" column="grade" type="byte" />
+		<property name="readAddress" column="read_address" type="string" />
+		<property name="mood" column="mood" type="string" />
+
+		<!-- 映射属性 -->
+		<many-to-one name="user" class="User" column="user_id"
+			not-null="true"></many-to-one>
+		<many-to-one name="Book" class="Book" column="book_id"
+			not-null="true"></many-to-one>
+			
+			
+	</class>
+</hibernate-mapping>

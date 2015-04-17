@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+
+#navigation {
+		background: #DBFFFF;
+	}
+	
+#navigation td {
+	border-bottom: 1px  ;
+	}
+	
+#navigation a {
+	font: bold 14px Arial, Helvetica, sans-serif;
+	color: #3f6580;
+	line-height:16px;
+	text-decoration: none;
+	display:block;
+	padding:8px 6px 10px 20px;
+	}
+	
+#navigation a:hover {
+	background: #99CC66;
+	color:#993300;
+}
+	
+	.title{
+	background-color: #B7CBDC;
+	font-weight: bold 16px;
+	margin-left:0px;
+	text-align:left;
+	height:22px;
+	text-indent:1em;
+	padding-top:5px;
+
+	}

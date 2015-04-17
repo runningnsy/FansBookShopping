@@ -1,0 +1,209 @@
+ /*页面主体*/
+#pagebody2{
+	width:958px;
+	margin:0 auto;
+	height:auto;
+	border:solid 1px  #F48301;
+}
+
+#rizhi{
+	background-color: #B7CBDC;
+	font-weight: bold 16px;
+	margin-left:0px;
+	text-align:left;
+	height:22px;
+	text-indent:1em;
+	}
+	
+.top {
+	width: 960px;
+	margin-top: 5px;	
+}
+
+.left {
+	width: auto;
+	float: left;
+	clear:right;
+	margin-left:5px;
+}
+
+  
+.right {
+	width: auto;
+	float: right;
+	clear:right;
+	margin-right:5px;
+}
+
+.tag{
+ width:955px;
+ margin-left:5px;
+ margin-top:10px;
+ font-size:14px;
+ float: left;
+ clear:left;
+}
+
+.tag a{
+color: ;
+}
+
+#title {
+	font: bold  16px "宋体";
+	margin-left:5px;
+	float:left;
+	width:960px;
+	text-align:left;
+}
+
+
+
+#comment {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #D4BFFF;
+	width: 954px;
+	margin-top:20px;
+}
+
+#content {
+	line-height: 20px;
+	text-align: left
+}
+
+#button {
+	background-color: #2A3FFF;;
+	float: left;
+	font-color: #FFFFFF;
+}
+
+#up2{
+width:960px;
+margin-left:10px;
+font-weight:bold;
+font-size:14px;
+float:left;
+clear:left;
+text-align:left;
+}
+
+.info{
+	width:960px;
+	text-align:left;
+	color:#808080;
+	font-size:12px;
+}
+	.info a{
+		color: #828282;
+	}
+	
+.desc{
+width:760px;
+font:12px;
+text-align:left;
+float:left;
+clear:left;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+.tool{
+width:200px;
+float:right;
+clear:right;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+#main{
+width:960px;
+margin-top:10px;
+}
+
+#msg{
+width:960px;
+margin-left:10px;
+text-align:left;
+height:auto;
+}
+
+#writemsg{
+width:860px;
+height:40px;
+}
+
+
+
+.commentcontent{
+text-align:left;
+}
+
+
+#commentmore{
+	width:960px;
+	height:10px;
+	float:right;
+	text-align:right;
+	margin-top:10px;
+	margin-bottom:5px;
+	}
+
+ul,ul li{list-style-type:none;}
+
+.blog_single_option {
+	height:20px;
+*position:relative;
+*z-index:99;
+margin-top:15px;
+margin-left:0px;
+}
+
+.blog_single_option li {
+	float:left; margin:0 4px 0 0; 
+	position:relative;
+	border:1px solid #CCCCCC;
+	}
+.blog_single_option a {
+	display:block; 
+	padding:2px 6px;
+	 padding:5px 6px 0\9; 
+	 height:16px\9;
+	  *padding-top:6px; 
+	  *height:15px; 
+	  overflow:hidden; 
+	  line-height:100% !important\9; 
+	  -moz-border-radius:3px; 
+	  -webkit-border-radius:3px; 
+	  _float:left;
+	  color:black;
+	  }
+	  
+	  .qianming{
+	  width:960px;
+	  text-align:left;
+	  margin-left:10px;
+	  margin-top:10px;
+	  }
+	  
+	  .qianming .content{
+	  border:1px solid #CDCEF2;
+	  padding-top:10px;
+	    height:40px;
+	       width:900px;
+	       padding-left:15px;
+	  }
+	  
+	  .pinglun .content{
+	   border:1px solid #CDCEF2;
+	     padding-top:10px;
+	   height:40px;
+	   width:900px;
+	      padding-left:15px;
+	  }
+	  
+	  .pinglun{
+	  width:960px;
+	  text-align:left;
+	  margin-left:10px;
+	  }
+	  

@@ -1,0 +1,160 @@
+﻿
+ /*页面侧边条*/
+#sidebar { 
+width:200px; /*设定宽度*/ 
+text-align:center; /*文字左对齐*/
+float:left; /*浮动居左*/ 
+clear:left; /*不允许左侧存在浮动*/ 
+overflow:hidden; /*超出宽度部分隐藏*/
+height:auto; 
+
+} 
+
+ /*首页文章部分*/
+#mainbody{
+width:730px; 
+text-align:left;
+float:right; /*浮动居右*/ 
+clear:right; /*不允许右侧存在浮动*/ 
+overflow:hidden;
+height:auto;
+margin-left:5px;
+}
+
+.desc{
+	text-align:left;
+	FONT-FAMILY: Tahoma, Helvetica, Arial; 
+	FONT-SIZE: 12px;
+	margin-left:40px;
+	}
+	
+#picture{
+border:solid 1px #F48301;
+height:auto;
+}
+
+#rili{
+margin-top:10px;
+border:solid 1px #F48301;
+height:200px;
+}
+ 
+ 
+ #calendar{
+ 
+ }
+ 
+ 
+ 
+ 
+.publicbar{
+border:solid 1px  #F48301;
+margin-top:10px;
+height:auto;
+}
+
+	
+ /*友情链接*/
+#friendlinks{
+	
+}
+
+#geRenDang{
+
+	}
+	
+	
+ /*公告栏*/
+#bulletin{
+margin-top:10px;
+border:solid 1px #F48301;
+height:140px;
+}
+
+ 
+ #gongGaoLan{
+ 
+ }
+
+#fangWenJiLu{
+ 	
+
+}
+
+#history{
+margin-top:10px;
+border:solid 1px #F48301;
+height:140px;
+}
+
+
+
+	#recentArticles{
+	border:solid 1px  #F48301;
+	margin-top:0px;
+	height:auto;
+	
+	}
+	
+	#recentTalkers{
+	border:solid 1px  #F48301;
+	margin-top:5px;
+	height:auto;
+	}
+	
+	
+	#recentMessages{
+	border:solid 1px  #F48301;
+	margin-top:5px;
+	height:auto;
+	}
+	
+	
+	.talkerContent{
+		width:680px;
+		margin-left:20px;
+	}
+	
+	.talkerDate{
+		width:660px;
+		margin-left:60px;
+		color:#999999;
+		font:12px;
+	}
+	
+	.messageContent{
+		width:660px;
+		margin-left:20px;
+	}
+	
+	.messageDate{
+		width:660px;
+		margin-left:60px;
+		color:#999999;
+		font:12px;
+	}
+	
+	
+	
+	
+	#liuyan{
+	
+	}
+	
+	#shuoshuo{
+	background-color: #B7CBDC;
+	font-weight: bold 16px;
+	margin-left:0px;
+	text-align:left;
+	height:22px;
+	text-indent:1em;
+	}
+	
+	#rizhi{
+	background-color: #B7CBDC;
+	font-weight: bold 16px;
+	margin-left:0px;
+	text-align:left;
+	height:22px;
+	text-indent:1em;
+	}

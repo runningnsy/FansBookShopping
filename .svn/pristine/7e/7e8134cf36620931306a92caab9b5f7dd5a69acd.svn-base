@@ -1,0 +1,64 @@
+
+body {
+	COLOR: #424242;
+	FONT-FAMILY: Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+	FONT-SIZE: 14px;
+	text-align:center;
+	margin-top:5px;
+}
+ a {
+	color: #666666;
+	text-decoration:  underline;
+}
+
+ a:hover {
+	text-decoration: underline;
+	color: #6666FF;
+}
+
+.top {
+	width: 900px;
+	margin-top: 5px;
+}
+
+.left {
+	width: 400px;
+	float: left;
+}
+
+.right {
+	width: 300px;
+	float: right;
+}
+
+#title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#date {
+	margin-top: 5px;
+}
+
+hr {
+	color: 
+}
+
+#comment {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #D4BFFF;
+	width: 890px;
+}
+
+#content {
+	line-height: 20px;
+	text-align: left
+}
+
+#button {
+	background-color: #2A3FFF;;
+	float: left;
+	font-color: #FFFFFF;
+}
+

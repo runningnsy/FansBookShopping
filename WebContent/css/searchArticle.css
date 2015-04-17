@@ -1,0 +1,112 @@
+
+	
+#mainbody{
+width:960px; 
+text-align:left;
+float:left; /*浮动居*/ 
+clear:left; /*不允许侧存在浮动*/ 
+height:auto;
+margin-left:0px;
+}
+
+
+.rightbar {
+	width:200px; /*设定宽度*/ 
+	border:solid 1px  #F48301;
+	text-align:center;
+	float:right;
+	clear:right; /*不允许左侧存在浮动*/ 
+	height:200px;
+	margin-right:0px;
+	margin-leftt:30px;
+	}
+    
+#category {
+	font-weight: bold;
+	margin-left:0px;
+	text-align:left;
+	border:solid 1px #CCCCCC;
+}
+
+	#search{
+		width:960px;
+	}
+	
+	.searchInput{
+		width:960px;
+		height:50px;
+		margin-top:15px;
+	}
+	
+	#keyword{
+		width:960px;
+		height:50px;
+		margin-top:15px;
+	}
+	
+hr {
+	color: #c8d3de;
+	height:1px;	
+}
+
+.link{
+width:700px;
+text-align:center;
+}
+
+#recentArticles{
+	border:solid 1px  #F48301;
+	
+	height:auto;
+	width:720px;
+	float:left;
+	clear:right;
+	
+	}
+	
+	#rizhi{
+
+	}
+	.item{
+	width:700px;
+	height:auto;
+	margin-left:10px;
+	margin-top:10px;
+	}
+	
+	.articleCategoryLink{
+	width:auto;
+	float:left;
+	clear:right;
+	}
+	
+	.articleCategoryLink a{
+		color:green;
+	}
+	
+	.articleTitleLink{
+		width:360px;
+		float:left;
+		clear:right;
+		margin-left:10px;
+	}
+	
+	.articleTitleLink a{
+		color:blue;
+	}
+	
+	
+	.num{
+		float:right;
+		clear:right;
+		margin-right:5px;
+	}
+	
+	.writtenDate{
+		float:left;
+		clear:right;
+		margin-left:5px;
+	}
+	
+	
+	

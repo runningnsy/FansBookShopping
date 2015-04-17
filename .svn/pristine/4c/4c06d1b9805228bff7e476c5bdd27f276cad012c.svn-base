@@ -1,0 +1,111 @@
+﻿/*
+ * 项目名称: UserShopping<br/>
+ * 作者博客: <a href="http://user.qzone.qq.com/240370818/infocenter">雨田墨客</a><br/>
+ * 作者邮箱: leiwen198962@qq.com<br/>
+ * 版权所有: 2011-2012,leiwen<br/>
+ */
+package cn.fansunion.bookshopping.test;
+
+import junit.framework.TestCase;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import cn.fansunion.bookshopping.domain.User;
+import cn.fansunion.bookshopping.domain.UserRole;
+import cn.fansunion.bookshopping.service.UserService;
+
+/**
+ * 单元测试：测试UserService中的方法
+ * 
+ * @author 雷文 2011-11-28
+ * @since 1.0
+ */
+public class UserServiceTest extends TestCase {
+	private ApplicationContext context;
+
+	@Override
+	public void setUp() {
+		String[] locations = { "applicationContext.xml" };
+		context = new ClassPathXmlApplicationContext(locations);
+
+		System.out.println("getBeanDefinitionCount:"
+				+ context.getBeanDefinitionCount());
+	}
+
+	@Override
+	public void tearDown() {
+
+	}
+
+	@Test
+	public void testAdd() {
+
+		UserService userService = (UserService) context
+				.getBean("userServiceImpl");
+
+		User user = new User();
+		user.setPassword("123456");
+		user.setAddress("wuhan");
+		user.setEmail("240370818@qq.com");
+		UserRole userRole = new UserRole();
+		userRole.setUserRoleId(1L);
+		user.setUserRole(userRole);
+
+		// 增加用户
+		userService.add(user);
+
+		Integer userId = user.getUserId();
+		System.out.println(userId);
+
+		// 查找用户
+		User user2 = userService.find(userId);
+		System.out.println(user);
+		System.out.println(user2);
+
+		// 断言
+		Assert.assertEquals(user, user2);
+
+		// 删除用户
+		userService.delete(user);
+		User user3 = userService.find(userId);
+
+		// 断言
+		Assert.assertNull(user3);
+	}
+
+	@Test
+	public void testUpdate() {
+
+		UserService userService = (UserService) context
+				.getBean("userServiceImpl");
+
+		User user = new User();
+		user.setAddress("wuhan");
+		user.setName("fans");
+
+		UserRole userRole = new UserRole();
+		userRole.setUserRoleId(2L);
+		user.setUserRole(userRole);
+
+		// 增加用户
+		userService.add(user);
+
+		Integer userId = user.getUserId();
+		System.out.println(userId);
+
+		String address = "xiangyang!";
+		user.setAddress(address);
+		userService.update(user);
+
+		// 查找用户
+		User user2 = userService.find(userId);
+		// 断言
+		Assert.assertEquals(user2.getAddress(), address);
+
+		userService.delete(user2);
+
+	}
+}

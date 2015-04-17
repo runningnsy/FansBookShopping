@@ -1,0 +1,118 @@
+﻿.navigator {
+	width: 720px;
+	background-image: url(../image/up.gif);
+	text-align: left;
+	margin-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+.navigator2 {
+	background-color: #f3fcf1;
+	width: 720px;
+	text-align: left;
+	
+	margin-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+.sidebar5{
+    width: 200px;
+	float:left;
+	}
+	
+	 
+.publicbar{
+border:solid 1px #F48301;
+margin-top:10px;
+height:auto;
+}
+
+.publicbar a {
+	color: #003366;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.hang{
+	height:15px;;
+	width:200px;
+	margin-top:10px;
+	}
+
+	.publicbar .left{
+	text-align:left;
+	width:100px;
+	float:left;
+	clear:left;
+
+	}
+	
+	.publicbar .right{
+	text-align:left;
+	width:100px;
+	float:right;
+	clear:right;
+	}
+	
+	.title{
+	background:#F48301;
+	text-align:left;
+	color:#FFFFFF;
+	height:15px;
+	DISPLAY: block; 
+	
+	}
+	
+	.bar{
+	text-align:left;
+	width:960px;
+	font-weight:bold;
+	margin-top:10px;
+	}
+	
+
+	
+#display{
+	width: 730px;
+     border-color: #77CC00;
+	border-style: solid;
+	border-width: 1px;
+	float:right;
+}
+
+#display a {
+	color: #003366;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+#display a:hover {
+	text-decoration: underline;
+	color: #fd2828;
+}
+
+.shang{
+width:958px;
+border:solid 1px #0083EB;
+margin-bottom:10px;
+height:50px;
+}
+
+.baidu{
+width:700px;
+float:left;
+clear:left;
+	}
+	
+.you{
+width:250px;
+float:right;
+clear:right;
+text-align:right;
+vertical-align:middle;
+margin-top:20px;
+}

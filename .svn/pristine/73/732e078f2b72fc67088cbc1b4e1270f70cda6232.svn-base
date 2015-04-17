@@ -1,0 +1,232 @@
+﻿/**
+ * 项目名称: FansBookShopping
+ * 版本号：1.0
+ * 名字：雷文
+ * QQ：240-370-818
+ * 邮箱: LeiWen@FansUnion.cn
+ * 
+ * 小雷网: http://FansUnion.cn
+ * CSDN:http://blog.csdn.net/FansUnion
+ * 版权所有: 2011-2013,leiwen
+ */
+package cn.fansunion.bookshopping.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import cn.fansunion.bookshopping.dao.BookDao;
+import cn.fansunion.bookshopping.domain.Book;
+import cn.fansunion.bookshopping.domain.BookCategory;
+import cn.fansunion.bookshopping.exceptions.ServiceException;
+import cn.fansunion.bookshopping.service.BookService;
+import cn.fansunion.bookshopping.util.WebConstants;
+
+/**
+ * 业务逻辑层。处理和书相关的业务，实现了BookService接口。
+ * 
+ * @author 雷文 2011-11-12
+ * @since 1.0
+ */
+@Service
+@Transactional(readOnly=true,propagation = Propagation.NOT_SUPPORTED)
+public class BookServiceImpl implements BookService {
+
+	private static final Logger LOG = Logger.getLogger(BookServiceImpl.class);
+
+	private int pageCounter = 0;
+	
+	@Resource
+	private BookDao bookDao;
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void add(Book book) throws ServiceException {
+		try {
+			LOG.info("Try to add a book.");
+
+			bookDao.add(book);
+
+			LOG.info("Add book successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("Add book failed.",re);
+			throw new ServiceException("Add book failed.");
+		}
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void update(Book book) throws ServiceException {
+		try {
+			LOG.info("Try to update a book.");
+
+			Book b = find(book.getBookId());
+			b.setCurrentPrice(book.getCurrentPrice());
+			b.setDescription(book.getDescription());
+			b.setAuthor(book.getAuthor());
+			b.setBookCategory(book.getBookCategory());
+			b.setFullPrice(book.getFullPrice());
+			b.setImage(book.getImage());
+			b.setIsbn(book.getIsbn());
+			b.setName(book.getName());
+			b.setPress(book.getPress());
+			b.setPressDate(book.getPressDate());
+
+			bookDao.update(b);
+			LOG.info("Update book successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("Update book failed.");
+			throw new ServiceException("Update book failed.");
+		}
+
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void delete(Book book) throws ServiceException {
+		try {
+			LOG.info("Try to delete a book.");
+			delete(book.getBookId());
+			LOG.info("Delete book successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("Delete book failed.");
+			throw new ServiceException("Delete book failed.");
+		}
+
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void delete(Integer bookId) throws ServiceException {
+		try {
+			LOG.info("Try to delete a book.");
+
+			Book book = bookDao.find(bookId);
+			bookDao.delete(book);
+			LOG.info("Delete book successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("Delete book failed.");
+			throw new ServiceException("Delete book failed.");
+		}
+
+	}
+
+	@Override
+	public Book find(Integer bookId) throws ServiceException {
+		Book book = null;
+		try {
+			LOG.info("Try to find a book.");
+			book = bookDao.find(bookId);
+			LOG.info("Find book successfully.");
+		} catch (RuntimeException re) {
+			LOG.info("Find book failed.");
+			throw new ServiceException("Find book failed.");
+		}
+
+		return book;
+	}
+
+	@Override
+	public List<Book> findAll() throws ServiceException {
+		List<Book> books = null;
+		try {
+			LOG.info("Try to find all books.");
+			books = bookDao.findAll();
+			LOG.info("Find all books successfully.");
+		} catch (RuntimeException re) {
+			LOG.info("Find all books failed.");
+			throw new ServiceException("Find all books failed.");
+		}
+
+		return books;
+	}
+
+	@Override
+	public List<Book> findByPage(int pageIndex) throws ServiceException {
+		List<Book> books = null;
+		try {
+			LOG.info("Try to findByPage.");
+
+			String sql = "select * from book";
+			Class<?> clazz = Book.class;
+			int pageSize = WebConstants.BOOK_PAGE_SIZE;
+			books = bookDao.findByPage(sql, clazz, pageIndex, pageSize);
+
+			String sqlCounter = "select count(*) from book";
+			pageCounter = bookDao.getPageCounter(sqlCounter);
+
+			LOG.info("findByPage book successfully.");
+		} catch (RuntimeException re) {
+			LOG.info("findByPage book failed." + pageIndex, re);
+
+			throw new ServiceException("findByPage book failed.");
+		}
+
+		return books;
+	}
+
+	@Override
+	public List<Book> findByPage(int pageIndex, long bookCategoryId)
+			throws ServiceException {
+		List<Book> books = null;
+		try {
+			LOG.info("Try to findByPage(int pageIndex, long bookCategoryId).");
+			String sql = "select * from book where book_category_id = ?";
+			Class<?> clazz = Book.class;
+			int pageSize = WebConstants.BOOK_PAGE_SIZE;
+			books = bookDao.findByPage(sql, clazz, bookCategoryId, pageIndex,
+					pageSize);
+
+			String sqlCounter = "select count(*) from book where book_category_id = ?";
+			pageCounter = bookDao.getPageCounter(sqlCounter, bookCategoryId);
+
+			LOG.info("findByPage(int pageIndex, long bookCategoryId) successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("findByPage(int pageIndex, long bookCategoryId) failed."
+					+ re);
+			throw new ServiceException(
+					"findByPage(int pageIndex, long bookCategoryId) failed.",
+					re);
+		}
+
+		return books;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.service.BookService#findAllBookCategories()
+	 */
+	@Override
+	public List<BookCategory> findAllBookCategories() throws ServiceException {
+
+		List<BookCategory> bookBookCategories = null;
+		try {
+			LOG.info("Try to find all books Categories.");
+			bookBookCategories = bookDao.findAllBookCategories();
+			LOG.info("Find all books Categories successfully.");
+		} catch (RuntimeException re) {
+			LOG.error("Find all books Categories failed.");
+			throw new ServiceException("Find all books Categories failed.");
+		}
+
+		return bookBookCategories;
+	}
+
+	
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.service.BookService#getPageCounter()
+	 */
+	@Override
+	public int getPageCounter() {
+		return pageCounter;
+	}
+}

@@ -1,0 +1,76 @@
+﻿/*
+ * 项目名称: BookShopping<br/>
+ * 作者博客: <a href="http://user.qzone.qq.com/240370818/infocenter">雨田墨客</a><br/>
+ * 作者邮箱: leiwen198962@qq.com<br/>
+ * 版权所有: 2011-2012,leiwen<br/>
+ */
+package cn.fansunion.bookshopping.domain;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * 书的分类
+ * 
+ * @author 雷文 2011-11-10
+ * @since 1.0
+ */
+public class BookCategory {
+	/**
+	 * 书的分类ID
+	 */
+	private Integer bookCategoryId;
+	/**
+	 * 书的分类名
+	 */
+	private String name;
+
+	private Set<Book> books = new HashSet<Book>();
+
+	/**
+	 * @return the bookCategoryId
+	 */
+	public Integer getBookCategoryId() {
+		return bookCategoryId;
+	}
+
+	/**
+	 * @param bookCategoryId
+	 *            the bookCategoryId to set
+	 */
+	public void setBookCategoryId(Integer bookCategoryId) {
+		this.bookCategoryId = bookCategoryId;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the books
+	 */
+	public Set<Book> getBooks() {
+		return books;
+	}
+
+	/**
+	 * @param books the books to set
+	 */
+	public void setBooks(Set<Book> books) {
+		this.books = books;
+	}
+
+	
+
+}

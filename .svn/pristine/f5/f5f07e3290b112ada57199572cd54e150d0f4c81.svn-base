@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<title>在线商城</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+<div id="header">
+
+	<div id="up">
+	${user.name}
+		<a href="prevRegister.action" target="_blank" title="用户注册">注册</a>&nbsp;| <a
+			href="prevLogin.action" target="_blank" title="用户登录">登录</a> &nbsp;| <a
+			href="http://www.YuTian24.com"
+			onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(this.href);return(false);"
+			title="设为首页" style="behavior: url(#default#homepage);">设为首页</a>&nbsp;|
+
+		<a href="http://www.YuTian24.com" title="收藏本站"
+			onclick="window.external.AddFavorite('http://yutian24.com','雨田网');return(false);">
+			加入收藏</a>&nbsp;
+	</div>
+
+	<div id="banner">
+		<br /> <br />
+
+		<div id="middle">
+			<div>&nbsp;在线书店</div>
+			<br /> <span>YuTian24.com</span>
+		</div>
+		<div id="right">实践创造未来</div>
+	</div>
+</div>

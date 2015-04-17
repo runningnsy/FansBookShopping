@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.fansunion.bookshopping.domain">
+	<class name="OrderItem" table="orderitem">
+		<!-- 映射标识属性 -->
+		<id name="orderItemId" column="order_item_id" type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="increment" />
+		</id>
+
+		<!-- 映射普通属性 -->
+		<property name="amount" type="int" />
+		<property name="price" type="float" />
+
+		<many-to-one name="book" class="Book" column="book_id"
+			not-null="true"></many-to-one>
+
+		<many-to-one name="order" class="Order" column="order_id"
+			not-null="true"></many-to-one>
+	</class>
+</hibernate-mapping>

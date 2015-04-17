@@ -1,0 +1,153 @@
+﻿/**
+ * 项目名称: FansBookShopping
+ * 版本号：1.0
+ * 名字：雷文
+ * QQ：240-370-818
+ * 邮箱: LeiWen@FansUnion.cn
+ * 
+ * 小雷网: http://FansUnion.cn
+ * CSDN:http://blog.csdn.net/FansUnion
+ * 版权所有: 2011-2013,leiwen
+ */
+package cn.fansunion.bookshopping.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+import cn.fansunion.bookshopping.dao.UserDao;
+import cn.fansunion.bookshopping.domain.User;
+import cn.fansunion.bookshopping.util.WebConstants;
+
+/**
+ * 数据访问层。访问数据库中与用户表 相关的信息，实现了UserDao接口。
+ * 
+ * @author 雷文 2011-11-28
+ * @since 1.0
+ */
+@Repository
+public class UserDaoImpl extends DaoSupportImpl implements UserDao {
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.leiwen.bookshopping.dao.UserDao#add(org.leiwen.bookshopping.domain
+	 * .User)
+	 */
+	@Override
+	public void add(User user) {
+		getSession().save(user);
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.dao.UserDao#find(java.lang.Long)
+	 */
+	@Override
+	public User find(Integer userId) {
+		return (User) getSession().get(User.class, userId);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.leiwen.bookshopping.dao.UserDao#update(org.leiwen.bookshopping.domain
+	 * .User)
+	 */
+	@Override
+	public void update(User user) {
+		getSession().update(user);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.leiwen.bookshopping.dao.UserDao#delete(org.leiwen.bookshopping.domain
+	 * .User)
+	 */
+	@Override
+	public void delete(User user) {
+		getSession().delete(user);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.dao.UserDao#findAll()
+	 */
+	@Override
+	public List<User> findAll() {
+		return getSession().createQuery("from User").list();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.dao.UserDao#getPageCounter(java.lang.String,
+	 * long)
+	 */
+	@Override
+	public int getPageCounter(String sqlCounter, long userRoleId) {
+		int pageCounter = 0;
+
+		Query query = getSession().createSQLQuery(sqlCounter);
+		query.setParameter(0, userRoleId);
+		List list = query.list();
+		if (list != null) {
+			pageCounter = Integer.parseInt(list.get(0).toString());
+
+			if (pageCounter % WebConstants.USER_PAGE_SIZE == 0) {
+				pageCounter = pageCounter / WebConstants.USER_PAGE_SIZE;
+			} else {
+				pageCounter = pageCounter / WebConstants.USER_PAGE_SIZE + 1;
+			}
+		}
+
+		return pageCounter;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.dao.UserDao#getPageCounter(java.lang.String)
+	 */
+	@Override
+	public int getPageCounter(String sqlCounter) {
+		int pageCounter = 0;
+
+		Query query = getSession().createSQLQuery(sqlCounter);
+		List list = query.list();
+		if (list != null) {
+			pageCounter = Integer.parseInt(list.get(0).toString());
+
+			if (pageCounter % WebConstants.USER_PAGE_SIZE == 0) {
+				pageCounter = pageCounter / WebConstants.USER_PAGE_SIZE;
+			} else {
+				pageCounter = pageCounter / WebConstants.USER_PAGE_SIZE + 1;
+			}
+		}
+
+		return pageCounter;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.leiwen.bookshopping.dao.UserDao#find(java.lang.String)
+	 */
+	@Override
+	public List<User> find(String name) {
+		String sql = "select * from user where name = ?";
+		Query query = getSession().createSQLQuery(sql).addEntity(User.class);
+		query.setParameter(0, name);
+
+		return query.list();
+	}
+
+}

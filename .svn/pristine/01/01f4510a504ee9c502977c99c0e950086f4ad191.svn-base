@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+	<!-- Struts2的对象工厂为spring，Struts2和spring整合的关键部分 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<!-- Struts2开发模式，开发过程设为true，可以获得更多异常信息，便于及时解决问题 -->
+	<constant name="struts.devMode" value="true"></constant>
+
+	<package name="bookShopping" namespace="" extends="struts-default">
+		<!-- 导向注册页面的action，仅仅起到了转向的作用 -->
+		<action name="prevRegister">
+			<result name="success">/WEB-INF/content/register.jsp</result>
+		</action>
+
+		<!-- 导向登录页面的action，仅仅起到了转向的作用 -->
+		<action name="prevLogin">
+			<result name="success">/WEB-INF/content/login.jsp</result>
+		</action>
+
+		<!-- 处理用户注册，即增加一个用户 -->
+		<action name="register" class="userAction" method="add">
+			<!-- 如果注册成功，导向welcome.action -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">welcome</param>
+			</result>
+		</action>
+
+		<!--处理用户登录，即检验数据库中是否有这个用户 -->
+		<action name="checkLogin" class="userAction" method="checkLogin">
+			<!-- 如果注册成功，导向welcome.action -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">welcome</param>
+			</result>
+		</action>
+
+
+		<!-- 首页 -->
+		<action name="welcome" class="bookAction" method="welcome">
+			<result name="success">/WEB-INF/content/welcome.jsp</result>
+		</action>
+		<!-- -->
+
+		<!-- 根据书的分类，初始化数据，然后显示数据 -->
+		<action name="pageBooks" class="bookAction" method="initBooksByPageIndex">
+			<result name="success">/WEB-INF/content/bookshopping.jsp</result>
+		</action>
+
+		<!-- 根据书的分类和当前分页书，初始化数据，然后显示数据 -->
+		<action name="pageCategoryBooks" class="bookAction"
+			method="initBooksByPageIndexAndCategory">
+			<result name="success">/WEB-INF/content/bookshopping.jsp</result>
+		</action>
+
+		<!-- 增加订单项，加入到购物车 -->
+		<action name="shoppingcart" class="orderAction" method="addOrderItem">
+			<result name="success">/WEB-INF/content/shoppingcart.jsp</result>
+		</action>
+
+		<!-- 结算 -->
+		<action name="pay" class="orderAction" method="pay">
+			<!-- 结算成功，跳转到findOrder.action -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">findOrder</param>
+				<param name="orderId">${orderId}</param>
+			</result>
+		</action>
+
+		<!-- 支付成功。显示刚刚的订单的信息 -->
+		<action name="findOrder" class="orderAction" method="find">
+			<result name="success">/WEB-INF/content/paySuccess.jsp</result>
+		</action>
+	</package>
+
+</struts>

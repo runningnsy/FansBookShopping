@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.fansunion.bookshopping.domain">
+	<class name="Order" table="order2">
+		<!-- 映射标识属性 -->
+		<id name="orderId" column="order_id" type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="receiver" column="receiver" type="string" />
+		<property name="Date" column="date" type="java.util.Date" />
+		<property name="status" column="status" type="string" />
+		<property name="payStyle" column="pay_style" type="string" />
+		<property name="totalMoney" column="total_money" type="float" />
+		<property name="count" type="int" />
+
+		<many-to-one name="user" class="User" column="user_id"></many-to-one>
+
+		<set name="orderItems" inverse="true" cascade="delete">
+			<key column="order_item_id"></key>
+			<one-to-many class="OrderItem"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

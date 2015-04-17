@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<div id="footer">
+	<a href="paper.action" target="_blank">意见反馈</a> | <a
+		href="aboutus.action" target="_blank">关于本站</a> | <a
+		href="contactus.action" target="_blank">联系我们</a> <br /> <span
+		style="FONT-FAMILY: Arial"> Copyright &copy; 2011 - 2013，雷文.
+		All Rights Reserved </span>
+</div>
+

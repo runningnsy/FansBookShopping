@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.fansunion.bookshopping.domain">
+	<class name="Book" table="Book">
+		<!-- 映射标识属性 -->
+		<id name="bookId" column="book_id" type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="increment" />
+		</id>
+		<!-- 映射普通属性 -->
+
+		<property name="name" column="name" type="string" />
+		<property name="currentPrice" column="current_price" type="float" />
+		<property name="fullPrice" column="full_price" type="float" />
+		<property name="description" column="description" type="string" />
+		<property name="author" column="author" type="string" />
+		<property name="press" column="press" type="string" />
+		<property name="pressDate" column="press_date" type="java.util.Date" />
+		<property name="isbn" column="isbn" type="long" />
+		<property name="stock" column="stock" type="long" />
+		<property name="image" column="image" type="string" />
+
+		<set name="bookComments" inverse="true">
+			<key column="book_comment_id" not-null="true"></key>
+			<one-to-many class="BookComment"></one-to-many>
+		</set>
+
+		<!-- 映射属性 -->
+		<many-to-one name="bookCategory" class="BookCategory"
+			column="book_category_id" not-null="true"></many-to-one>
+
+		<set name="orderItems" inverse="true">
+			<key column="order_item_id" not-null="true"></key>
+			<one-to-many class="OrderItem"></one-to-many>
+		</set>
+
+	</class>
+</hibernate-mapping>
